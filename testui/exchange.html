@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+    <script src="js/navbar.js"></script>
+    <script src="js/win.js"></script>
+    <title>testui</title>
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.js">
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.min.js">
+    <script>
+            // Modern dapp browsers...
+      if (window.ethereum) {
+        App.web3Provider = window.ethereum;
+        try {
+          // Request account access
+          await window.ethereum.enable();
+        } catch (error) {
+          // User denied account access...
+          console.error("User denied account access")
+        }
+      }
+      // Legacy dapp browsers...
+      else if (window.web3) {
+        App.web3Provider = window.web3.currentProvider;
+      }
+      // If no injected web3 instance is detected, fall back to Ganache
+      else {
+        App.web3Provider = new Web3.providers.HttpProvider('https://mainnet.infura.io/v3/300a33c48d5d4f419b705e01de4d1e84');
+      }
+      web3 = new Web3(App.web3Provider);
+
+      web3.eth.getAccounts(function(error, accounts) {
+        if(error) {
+          console.log(error);
+        }
+
+        web3.eth.getBalance(accounts[0]).then(function(result){
+         console.log( "Balance : " ,web3.utils.fromWei(result, 'ether'));
+        });
+       });
+
+    </script>
+  </head>
+  <body>
+
+    <div class="w3-bar w3-black">
+  <a href="#" class="w3-bar-item w3-button">Home</a>
+  <a href="#" class="w3-bar-item w3-button w3-hide-small">amazon</a>
+  <a href="#" class="w3-bar-item w3-button w3-hide-small">google</a>
+  <a href="#" class="w3-bar-item w3-button w3-hide-small">facbook</a>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="myFunction()">&#9776;</a>
+</div>
+<div id="demo" class="w3-bar-block w3-grey w3-hide w3-hide-large w3-hide-medium">
+  <a href="#" class="w3-bar-item w3-button">amazon</a>
+  <a href="#" class="w3-bar-item w3-button">google</a>
+  <a href="#" class="w3-bar-item w3-button">facebook</a>
+</div>
+<script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
+<coingecko-coin-price-marquee-widget  coin-ids="bitcoin,eos,ethereum,litecoin,ripple,tron,chainlink,iexec-rlc,singularitynet" currency="usd" background-color="#ffffff" locale="en"></coingecko-coin-price-marquee-widget>
+
+<div class="w3-container">
+  <div class="w3-panel w3-border w3-light-grey w3-round-large w3-center">
+    <p>Masternode LInk</p>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<div class="w3-container">
+  <div class="w3-row-padding">
+    <div class="w3-third">
+      <div class="w3-card-4 w3-dark-grey w3-center" style="width:100%">
+        <h3>Coinmarketap</h3>
+        <h5>John Doe</h5>
+      </div>
+    </div>
+
+    <div class="w3-third">
+      <div class="w3-card-4 w3-dark-grey w3-center" >
+        <h3>Tewken</h3>
+        <h5>John Doe</h5>
+      </div>
+    </div>
+
+      <div class="w3-third">
+        <div class="w3-card-4 w3-dark-grey w3-center" style="width:100%">
+          <center>
+            <table class="w3-table">
+            <tr>
+              <th><h3>ETH</h3></th>
+              <th><h3>ETH</h3></th>
+            </tr>
+            <tr>
+              <td>your dividend earnings</td>
+              <td>your referral earnings</td>
+            </tr>
+            <tr>
+              <td>Value Usdt</td>
+              <td>Value usdt</td>
+            </tr>
+            </table>
+          </center>
+        </div>
+      </div>
+  </div>
+
+<br>
+<br>
+
+
+
+  <div class="w3-row-padding">
+    <div class="w3-third">
+      <div class="w3-container w3-card-4 w3-dark-grey w3-center">
+        <p>Buy Bc2 tewken</p>
+        <center><input class="w3-input w3-border"  type="text" style="width:75%" placeholder="Amount of ETH"></center>
+        <div class="w3-section">
+          <button class="w3-button w3-green w3-hover-shadow w3-center" style="width:90%">Buy</button>
+
+        </div>
+      </div>
+    </div>
+    <div class="w3-third">
+      <div class="w3-container w3-card-4 w3-dark-grey w3-center">
+        <p>Sell Bc2 tewken</p>
+        <center><input class="w3-input w3-border"  type="text" style="width:75%" placeholder="Amount of BC2"></center>
+        <div class="w3-section">
+
+          <button class="w3-button w3-red w3-hover-shadow w3-center" style="width:90%">Sell</button>
+        </div>
+      </div>
+    </div>
+    <div class="w3-third">
+      <div class="w3-container w3-card-4 w3-dark-grey w3-center">
+        <h3>Eth: </h3> <h3>Eth </h3>
+        <h5>Your dividend earnings </h5><h5>Your referral earnings </h5>
+
+        <div class="w3-section">
+          <button class="w3-button w3-green w3-hover-shadow w3-center" style="width:45%">Reinvest</button>
+          <button class="w3-button w3-red w3-hover-shadow w3-center" style="width:45%">Withdraw</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+  </body>
+</html>
